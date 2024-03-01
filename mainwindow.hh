@@ -457,9 +457,11 @@ private slots:
   void on_pageSetup_triggered();
   void on_printPreview_triggered();
   void on_print_triggered();
+  void on_printTB_triggered();
   void printPreviewPaintRequested( QPrinter * );
 
   void on_saveArticle_triggered();
+  void on_saveArticleTB_triggered();
 
   void on_rescanFiles_triggered();
 

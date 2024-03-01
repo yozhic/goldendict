@@ -3654,6 +3654,20 @@ void MainWindow::on_print_triggered()
   view->print( &getPrinter() );
 }
 
+void MainWindow::on_printTB_triggered()
+{
+  QPrintDialog dialog( &getPrinter(), this );
+
+  dialog.setWindowTitle( tr( "Print Article") );
+
+  if ( dialog.exec() != QDialog::Accepted )
+   return;
+
+  ArticleView *view = getCurrentArticleView();
+
+  view->print( &getPrinter() );
+}
+
 void MainWindow::printPreviewPaintRequested( QPrinter * printer )
 {
   ArticleView *view = getCurrentArticleView();
@@ -3706,6 +3720,128 @@ static void filterAndCollectResources( QString & html, QRegExp & rx, const QStri
 }
 
 void MainWindow::on_saveArticle_triggered()
+{
+  ArticleView *view = getCurrentArticleView();
+
+  QString fileName = view->getTitle().simplified();
+
+  // Replace reserved filename characters
+  QRegExp rxName( "[/\\\\\\?\\*:\\|<>]" );
+  fileName.replace( rxName, "_" );
+
+  fileName += ".html";
+  QString savePath;
+
+  if ( cfg.articleSavePath.isEmpty() )
+    savePath = QDir::homePath();
+  else
+  {
+    savePath = QDir::fromNativeSeparators( cfg.articleSavePath );
+    if ( !QDir( savePath ).exists() )
+      savePath = QDir::homePath();
+  }
+
+  QFileDialog::Options options = QFileDialog::HideNameFilterDetails;
+  QString selectedFilter;
+  QStringList filters;
+  filters.push_back( tr( "Article, Complete (*.html)" ) );
+  filters.push_back( tr( "Article, HTML Only (*.html)" ) );
+
+  fileName = savePath + "/" + fileName;
+  fileName = QFileDialog::getSaveFileName( this, tr(  "Save Article As" ),
+                                           fileName,
+                                           filters.join( ";;" ),
+                                           &selectedFilter, options );
+
+  // The " (*.html)" part of filters[i] is absent from selectedFilter in Qt 5.
+  bool const complete = filters.at( 0 ).startsWith( selectedFilter );
+
+  if ( !fileName.isEmpty() )
+  {
+
+    QFile file( fileName );
+
+    if ( !file.open( QIODevice::WriteOnly ) )
+    {
+      QMessageBox::critical( this, tr( "Error" ),
+                             tr( "Can't save article: %1" ).arg( file.errorString() ) );
+    }
+    else
+    {
+      QString html = view->toHtml();
+      QFileInfo fi( fileName );
+      cfg.articleSavePath = QDir::toNativeSeparators( fi.absoluteDir().absolutePath() );
+
+      // Convert internal links
+
+      QRegExp rx3( "href=\"(bword:|gdlookup://localhost/)([^\"]+)\"" );
+      int pos = 0;
+      while ( ( pos = rx3.indexIn( html, pos ) ) != -1 )
+      {
+        QString name = QUrl::fromPercentEncoding( rx3.cap( 2 ).simplified().toLatin1() );
+        QString anchor;
+        name.replace( "?gdanchor=", "#" );
+        int n = name.indexOf( '#' );
+        if( n > 0 )
+        {
+          anchor = name.mid( n );
+          name.truncate( n );
+          anchor.replace( QRegExp( "(g[0-9a-f]{32}_)[0-9a-f]+_" ), "\\1" ); // MDict anchors
+        }
+        name.replace( rxName, "_" );
+        name = QString( "href=\"" ) + QUrl::toPercentEncoding( name ) + ".html" + anchor + "\"";
+        html.replace( pos, rx3.cap().length(), name );
+        pos += name.length();
+      }
+
+      // MDict anchors
+      QRegExp anchorLinkRe( "(<\\s*a\\s+[^>]*\\b(?:name|id)\\b\\s*=\\s*[\"']*g[0-9a-f]{32}_)([0-9a-f]+_)(?=[^\"'])", Qt::CaseInsensitive );
+      html.replace( anchorLinkRe, "\\1" );
+
+      if ( complete )
+      {
+        QString folder = fi.absoluteDir().absolutePath() + "/" + fi.baseName() + "_files";
+        QRegExp rx1( "\"((?:bres|gico|gdau|qrcx|gdvideo)://[^\"]+)\"" );
+        QRegExp rx2( "'((?:bres|gico|gdau|qrcx|gdvideo)://[^']+)'" );
+        set< QByteArray > resourceIncluded;
+        vector< pair< QUrl, QString > > downloadResources;
+
+        filterAndCollectResources( html, rx1, "\"", folder, resourceIncluded, downloadResources );
+        filterAndCollectResources( html, rx2, "'", folder, resourceIncluded, downloadResources );
+
+        ArticleSaveProgressDialog * progressDialog = new ArticleSaveProgressDialog( this );
+        // reserve '1' for saving main html file
+        int maxVal = 1;
+
+        // Pull and save resources to files
+        for ( vector< pair< QUrl, QString > >::const_iterator i = downloadResources.begin();
+              i != downloadResources.end(); ++i )
+        {
+          ResourceToSaveHandler * handler = view->saveResource( i->first, i->second );
+          if( !handler->isEmpty() )
+          {
+            maxVal += 1;
+            connect( handler, SIGNAL( done() ), progressDialog, SLOT( perform() ) );
+          }
+        }
+
+        progressDialog->setLabelText( tr("Saving article...") );
+        progressDialog->setRange( 0, maxVal );
+        progressDialog->setValue( 0 );
+        progressDialog->show();
+
+        file.write( html.toUtf8() );
+        progressDialog->setValue( 1 );
+      }
+      else
+      {
+        file.write( html.toUtf8() );
+      }
+    }
+  }
+}
+
+void MainWindow::on_saveArticleTB_triggered()
 {
   ArticleView *view = getCurrentArticleView();
 
