@@ -59,9 +59,9 @@
        <property name="text">
         <string notr="true"/>
        </property>
-       <property name="pixmap">
+       <!-- <property name="pixmap">
         <pixmap resource="resources.qrc">:/icons/hotkeys.png</pixmap>
-       </property>
+       </property> -->
        <property name="scaledContents">
         <bool>true</bool>
        </property>
