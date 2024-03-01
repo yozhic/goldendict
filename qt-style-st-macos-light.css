@@ -20,6 +20,10 @@
 /* ==================== GLOBAL SCOPE ==================== */
 /* ====================================================== */
 
+QAbstractScrollArea::corner
+{
+  background: transparent;
+}
 QComboBox
 {
   min-width: 100px;
@@ -768,10 +772,6 @@ ScanPopup #dictionaryBar #qt_toolbar_ext_button:checked:pressed
 
 /* =============== DICTIONARIES... WINDOW =============== */
 
-EditDictionaries QAbstractScrollArea::corner
-{
-  background: transparent;
-}
 EditDictionaries QPlainTextEdit
 {
   background: palette(base);
