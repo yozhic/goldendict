@@ -113,7 +113,11 @@ TranslateBox::TranslateBox(QWidget *parent) : QWidget(parent),
   layout->setMargin(0);
   layout->addWidget(translate_line);
 
-  QPixmap image(":/icons/system-search.png");
+  #ifdef Q_OS_MAC
+    QPixmap image(":/macicons/system-search.svg");
+  #else
+    QPixmap image(":/icons/system-search.png");
+  #endif
   translate_line->setButtonPixmap(ExtLineEdit::Left, image.scaled(18, 18, Qt::KeepAspectRatio, Qt::SmoothTransformation));
   // translate_line->setButtonToolTip(ExtLineEdit::Left, tr("Options"));
   translate_line->setButtonVisible(ExtLineEdit::Left, true);

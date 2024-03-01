@@ -80,18 +80,29 @@ HelpWindow::HelpWindow( QWidget * parent, Config::Class & cfg_ ) :
   navToolBar = new QToolBar( this );
   navHome = navToolBar->addAction( QIcon( ":/icons/home.png" ), tr( "Home" ) );
   navToolBar->widgetForAction( navHome )->setObjectName( "helpHomeButton" );
-  navBack = navToolBar->addAction( QIcon( ":/icons/previous.png" ), tr( "Back" ) );
+  #ifdef Q_OS_MAC
+    navBack = navToolBar->addAction( QIcon( ":/macicons/previous.svg" ), tr( "Back" ) );
+    navForward = navToolBar->addAction( QIcon( ":/macicons/next.svg" ), tr( "Forward" ) );
+  #else
+    navBack = navToolBar->addAction( QIcon( ":/icons/previous.png" ), tr( "Back" ) );
+    navForward = navToolBar->addAction( QIcon( ":/icons/next.png" ), tr( "Forward" ) );
+  #endif
   navToolBar->widgetForAction( navBack )->setObjectName( "helpBackButton" );
-  navForward = navToolBar->addAction( QIcon( ":/icons/next.png" ), tr( "Forward" ) );
   navToolBar->widgetForAction( navForward )->setObjectName( "helpForwardButton" );
 
   navToolBar->addSeparator();
 
-  zoomInAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoomin" ), tr( "Zoom In" ) );
+  #ifdef Q_OS_MAC
+    zoomInAction = navToolBar->addAction( QIcon( ":/macicons/zoomin" ), tr( "Zoom In" ) );
+    zoomOutAction = navToolBar->addAction( QIcon( ":/macicons/zoomout" ), tr( "Zoom Out" ) );
+    zoomBaseAction = navToolBar->addAction( QIcon( ":/macicons/zoombase" ), tr( "Normal Size" ) );
+  #else
+    zoomInAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoomin" ), tr( "Zoom In" ) );
+    zoomOutAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoomout" ), tr( "Zoom Out" ) );
+    zoomBaseAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoombase" ), tr( "Normal Size" ) );
+  #endif
   navToolBar->widgetForAction( zoomInAction )->setObjectName( "zoomInButton" );
-  zoomOutAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoomout" ), tr( "Zoom Out" ) );
   navToolBar->widgetForAction( zoomInAction )->setObjectName( "zoomOutButton" );
-  zoomBaseAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoombase" ), tr( "Normal Size" ) );
   navToolBar->widgetForAction( zoomBaseAction )->setObjectName( "zoomBaseButton" );
 
   navForward->setEnabled( false );

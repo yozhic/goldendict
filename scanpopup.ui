@@ -117,7 +117,7 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/icons/previous.png</normaloff>:/icons/previous.png</iconset>
+               <normaloff>:/macicons/previous_xs.svg</normaloff>:/macicons/previous_xs.svg</iconset>
              </property>
             </widget>
            </item>
@@ -131,7 +131,7 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/icons/next.png</normaloff>:/icons/next.png</iconset>
+               <normaloff>:/macicons/next_xs.svg</normaloff>:/macicons/next_xs.svg</iconset>
              </property>
             </widget>
            </item>
@@ -145,7 +145,7 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/icons/playsound.png</normaloff>:/icons/playsound.png</iconset>
+               <normaloff>:/macicons/playsound.svg</normaloff>:/macicons/playsound.svg</iconset>
              </property>
              <property name="shortcut">
               <string>Alt+S</string>
@@ -165,7 +165,7 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/icons/programicon.png</normaloff>:/icons/programicon.png</iconset>
+               <normaloff>:/macicons/book.svg</normaloff>:/macicons/book.svg</iconset>
              </property>
              <property name="shortcut">
               <string>Alt+W</string>
@@ -182,7 +182,7 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/icons/star.png</normaloff>:/icons/star.png</iconset>
+               <normaloff>:/macicons/star_xs.svg</normaloff>:/macicons/star_xs.svg</iconset>
              </property>
              <property name="shortcut">
               <string notr="true">Ctrl+E</string>
@@ -212,7 +212,7 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/icons/bookcase.png</normaloff>:/icons/bookcase.png</iconset>
+               <normaloff>:/macicons/bookcase.svg</normaloff>:/macicons/bookcase.svg</iconset>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -235,7 +235,7 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/icons/ontop.png</normaloff>:/icons/ontop.png</iconset>
+               <normaloff>:/macicons/ontop.svg</normaloff>:/macicons/ontop.svg</iconset>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -256,7 +256,7 @@ could be resized or managed in other ways.</string>
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/icons/pushpin.png</normaloff>:/icons/pushpin.png</iconset>
+               <normaloff>:/macicons/pushpin.svg</normaloff>:/macicons/pushpin.svg</iconset>
              </property>
              <property name="checkable">
               <bool>true</bool>

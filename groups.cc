@@ -30,7 +30,11 @@ Groups::Groups( QWidget * parent,
 
   groupsListButton = new QToolButton( ui.groups );
   groupsListButton->setAutoRaise( true );
-  groupsListButton->setIcon( QIcon( ":/icons/windows-list.png" ) );
+  #ifdef Q_OS_MAC
+    groupsListButton->setIcon( QIcon( ":/macicons/windows-list.svg" ) );
+  #else
+    groupsListButton->setIcon( QIcon( ":/icons/windows-list.png" ) );
+  #endif
   groupsListButton->setMenu( groupsListMenu );
   groupsListButton->setToolTip( tr( "Open groups list" ) );
   groupsListButton->setPopupMode( QToolButton::InstantPopup );

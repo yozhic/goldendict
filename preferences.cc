@@ -166,6 +166,9 @@ Preferences::Preferences( QWidget * parent, Config::Class & cfg_ ):
   ui.displayStyle->addItem( QIcon( ":/icons/icon32_bgl.png" ), tr( "Babylon" ), QString( "babylon" ) );
   ui.displayStyle->addItem( QIcon( ":/icons/icon32_lingoes.png" ), tr( "Lingoes" ), QString( "lingoes" ) );
   ui.displayStyle->addItem( QIcon( ":/icons/icon32_lingoes.png" ), tr( "Lingoes-Blue" ), QString( "lingoes-blue" ) );
+  ui.displayStyle->addItem( QIcon( ":/macicons/logo.svg" ), tr( "macOS Light" ), QString( "macos-light" ) );
+  ui.displayStyle->addItem( QIcon( ":/macicons/logo.svg" ), tr( "macOS Dark" ), QString( "macos-dark" ) );
+  ui.displayStyle->addItem( QIcon( ":/macicons/logo.svg" ), tr( "macOS Dark Deep" ), QString( "macos-dark-deep" ) );
 
   for( int x = 0; x < ui.displayStyle->count(); ++x )
     if ( ui.displayStyle->itemData( x ).toString() == p.displayStyle )
