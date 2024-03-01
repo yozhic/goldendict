@@ -1,0 +1,983 @@
+
+/* ======= This file is encoded UTF-8 without BOM ======= */
+/*                  GD MACOS LIGHT THEME                  */
+/* ====================================================== */
+
+/* ====================================================== */
+/*         =========== COLOR PALETTE ===========          */
+/* #E3E3E3 - 1й дочерний фон QStackedWidget в диалогах    */
+/* #DFDFDF - фон блока ComboBox + translateLine           */
+/* #DADADA - 2й дочерний фон QStackedWidget в диалогах    */
+/* #D4D4D4 - подсветка кнопок панелей                     */
+/* #B5B5B5 - подсветка кнопок тулбаров                    */
+/* #7F7F7F - нажатие кнопок                               */
+/* #6990F4 - подсветка пунктов меню (синий)               */
+/* #3663DD - акцент рамок (тёмно-синий)                   */
+/* #FFD2D3 - подсветка No Result                          */
+/* ====================================================== */
+
+/* ====================================================== */
+/* ==================== GLOBAL SCOPE ==================== */
+/* ====================================================== */
+
+QComboBox
+{
+  min-width: 100px;
+}
+QLineEdit
+{
+  padding: 1px;
+}
+/*---menu---*/
+QMenu
+{
+  margin: 6px;
+}
+QMenu::item
+{
+  padding: 3px 26px 3px 6px;
+}
+QMenu::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+}
+QMenu::icon
+{
+  padding: 2px 5px;
+}
+QMenu::icon:checked
+{
+  background: #D4D4D4;
+  border: 1px solid #D4D4D4;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+QMenu::icon:checked:selected
+{
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+/*---tooltip---*/
+QToolTip
+{
+  padding: 4px;
+}
+/*---tree view---*/
+QTreeView
+{
+  background: palette(base);
+  color: palette(text);
+}
+QTreeView::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+QTreeView::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+QTreeView::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+QTreeView::item:selected:active
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+QTreeView::item:selected:hover
+{
+  border: 1px solid #3663DD;
+}
+QTreeView::item:selected:!active
+{
+  color: palette(text);
+  background: #DADADA;
+  border: 1px solid #DADADA;
+}
+QTreeView::item:selected:!active:hover
+{
+  border: 1px solid palette(dark);
+}
+QTreeView::branch:hover,
+QTreeView::branch:selected,
+QTreeView::branch:active,
+QTreeView::branch:hover,
+QTreeView::branch:!active,
+QTreeView::branch:!active:hover
+{
+  background: palette(base);
+  border: 1px solid palette(base);
+}
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings
+{
+  image: url(:/icons/expand_article.png);
+}
+QTreeView::branch:has-children:!has-siblings:closed:hover,
+QTreeView::branch:closed:has-children:has-siblings:hover
+{
+  image: url(:/icons/expand_article_hovered.png);
+}
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings
+{
+  image: url(:/icons/collapse_article.png);
+}
+QTreeView::branch:open:has-children:!has-siblings:hover,
+QTreeView::branch:open:has-children:has-siblings:hover
+{
+  image: url(:/icons/collapse_article_hovered.png);
+}
+
+/* ================== POP-UP STATUS BAR ================= */
+
+MainStatusBar #text,
+MainStatusBar #icon
+{
+  color:      palette(text);
+  background: palette(midlight);
+}
+MainStatusBar #text
+{
+  padding:       8px;
+  border-radius: 4px;
+  border-top:    1px solid palette(dark);
+  border-right:  1px solid palette(dark);
+  border-bottom: 1px solid palette(dark);
+}
+MainStatusBar[hasImage="false"] #text
+{
+  border-left: 1px solid palette(dark);
+}
+MainStatusBar[hasImage="true"] #text
+{
+  padding-left: 0px;
+}
+MainStatusBar #icon
+{
+  border-left:   1px solid palette(dark);
+  border-bottom: 1px solid palette(dark);
+  border-top:    1px solid palette(dark);
+}
+
+/* ================= POP-UP SEARCH BAR ================== */
+/* ============= centralWidget & ScanPopup ============== */
+
+#searchFrame #searchPrevious,
+#searchFrame #searchNext,
+#searchFrame #highlightAllButton
+{
+  background: transparent;
+  border-color: transparent;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 12pt;
+}
+#searchFrame #searchPrevious:hover,
+#searchFrame #searchNext:hover,
+#searchFrame #highlightAllButton:hover
+{
+  background: #D4D4D4;
+}
+#searchFrame #searchPrevious:pressed,
+#searchFrame #searchNext:pressed,
+#searchFrame #highlightAllButton:pressed,
+#searchFrame #highlightAllButton:checked:pressed
+{
+  color: palette(midlight);
+  background: #7F7F7F;
+}
+#searchFrame #highlightAllButton:checked
+{
+  background: #D4D4D4;
+}
+#searchFrame #highlightAllButton:checked:hover
+{
+  border: 1px solid #6990F4;
+}
+#searchFrame #searchText
+{
+  padding: 1px;
+}
+#searchFrame #searchText[noResults="true"]
+{
+  background: #FFD2D3;
+}
+#searchFrame #searchCloseButton
+{
+  background: palette(window);
+  border: 1px solid palette(window);
+  border-radius: 4px;
+  padding: 4px;
+}
+#searchFrame #searchCloseButton:hover
+{
+  background: #D4D4D4;
+}
+#searchFrame #searchCloseButton:pressed
+{
+  background: #7F7F7F;
+}
+
+/* ====================================================== */
+/* ==================== LOCAL SCOPE ===================== */
+/* ====================================================== */
+
+MainWindow
+{
+  background: palette(window);
+}
+MainWindow::separator
+{
+  background: palette(window);
+  width:  4px;
+  height: 4px;
+}
+
+/* ================ Dictionaries Toolbar ================ */
+MainWindow #dictionaryBar
+{
+  padding: 6px;
+}
+MainWindow #dictionaryBar QMenu::item
+{
+  padding-left: 12px;
+}
+/* dictionary buttons */
+MainWindow #dictionaryBar QToolButton
+{
+  color: palette(text);
+  background:       transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 4px 3px;
+}
+MainWindow #dictionaryBar QToolButton:checked
+{
+  color: palette(text);
+  background: #B5B5B5;
+  border: 1px solid #B5B5B5;
+  border-radius: 2px;
+  padding: 4px 3px;
+}
+MainWindow #dictionaryBar QToolButton:hover
+{
+  border-radius: 2px;
+  border: 1px solid #3663DD;
+}
+MainWindow #dictionaryBar QToolButton:checked:hover
+{
+  border-radius: 2px;
+  border: 1px solid #3663DD;
+}
+MainWindow #dictionaryBar QToolButton:pressed,
+MainWindow #dictionaryBar QToolButton:checked:pressed
+{
+  color: palette(midlight);
+  background:       #7F7F7F;
+  border: 1px solid #7F7F7F;
+}
+MainWindow #dictionaryBar #qt_toolbar_ext_button:hover
+{
+  background: #B5B5B5;
+  border: 1px solid #B5B5B5;
+}
+MainWindow #dictionaryBar #qt_toolbar_ext_button:pressed,
+MainWindow #dictionaryBar #qt_toolbar_ext_button:checked:pressed
+{
+  background:       #7F7F7F;
+  border: 1px solid #7F7F7F;
+}
+
+/* ======================= PANES ======================== */
+/* ====== Search, History, Dictionaries, Favorites ====== */
+/* ================= "Look up in" line ================== */
+
+MainWindow #searchPane QLabel
+{
+  margin-top:    4px;
+  margin-bottom: 4px;
+}
+MainWindow #searchPane  #wordList,
+MainWindow #dictsPane   #dictsList,
+MainWindow #historyPane #historyList,
+MainWindow #favoritesPane #favoritesTree
+{
+  background: palette(base);
+  color: palette(text);
+}
+MainWindow #searchPane     #wordList::item,
+MainWindow #dictsPane     #dictsList::item,
+MainWindow #historyPane #historyList::item,
+MainWindow #favoritesPane #favoritesTree::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+MainWindow #searchPane     #wordList::item:hover,
+MainWindow #dictsPane     #dictsList::item:hover,
+MainWindow #historyPane #historyList::item:hover,
+MainWindow #favoritesPane #favoritesTree::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+MainWindow #searchPane     #wordList::item:selected,
+MainWindow #dictsPane     #dictsList::item:selected,
+MainWindow #historyPane #historyList::item:selected,
+MainWindow #favoritesPane #favoritesTree::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+MainWindow #searchPane     #wordList::item:selected:active,
+MainWindow #dictsPane     #dictsList::item:selected:active,
+MainWindow #historyPane #historyList::item:selected:active,
+MainWindow #favoritesPane #favoritesTree::item:selected:active
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+MainWindow #searchPane     #wordList::item:selected:hover,
+MainWindow #dictsPane     #dictsList::item:selected:hover,
+MainWindow #historyPane #historyList::item:selected:hover,
+MainWindow #favoritesPane #favoritesTree::item:selected:hover
+{
+  border: 1px solid #3663DD;
+}
+MainWindow #searchPane     #wordList::item:selected:!active,
+MainWindow #dictsPane     #dictsList::item:selected:!active,
+MainWindow #historyPane #historyList::item:selected:!active,
+MainWindow #favoritesPane #favoritesTree::item:selected:!active
+{
+  color: palette(text);
+  background: #DADADA;
+  border: 1px solid #DADADA;
+}
+MainWindow #searchPane     #wordList::item:selected:!active:hover,
+MainWindow #dictsPane     #dictsList::item:selected:!active:hover,
+MainWindow #historyPane #historyList::item:selected:!active:hover,
+MainWindow #favoritesPane #favoritesTree::item:selected:!active:hover
+{
+  border: 1px solid palette(dark);
+}
+MainWindow #searchPane #translateLine
+{
+  padding-left: 3px;
+  background-color: palette(base);
+  color: palette(text);
+}
+MainWindow #searchPane #translateLine[noResults="true"]
+{
+  background: #FFD2D3;
+}
+
+/* ================= Navigation Toolbar ================= */
+
+MainWindow #navToolbar QToolButton
+{
+  background:       transparent;
+  border: 1px solid transparent;
+  /*padding: 2px;*/
+  margin:  2px 0px;
+}
+MainWindow #navToolbar QToolButton:hover
+{
+  background:       #B5B5B5;
+  border: 1px solid #B5B5B5;
+  border-radius: 4px;
+}
+MainWindow #navToolbar QToolButton:checked
+{
+  background:       #B5B5B5;
+  border: 1px solid #B5B5B5;
+}
+MainWindow #navToolbar QToolButton:checked:hover
+{
+  border: 1px solid #3663DD;
+}
+MainWindow #navToolbar QToolButton:pressed,
+MainWindow #navToolbar QToolButton:checked:pressed
+{
+  background:       #7F7F7F;
+  border: 1px solid #7F7F7F;
+}
+MainWindow #navToolbar GroupComboBox
+{
+  color: palette(text);
+  background: #DFDFDF;
+  border: 1px solid palette(dark);
+  padding-left: 8px;
+  margin-top: 2px;
+  margin-bottom: 3px;
+  border-top-left-radius:    4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius:    0px;
+  border-bottom-right-radius: 0px;
+  selection-background-color: #6990F4;
+  selection-color: palette(bright-text);
+}
+MainWindow #navToolbar GroupComboBox:hover
+{
+  background: palette(midlight);
+}
+MainWindow #navToolbar GroupComboBox:on
+{
+  background: transparent;
+  border: 1px solid palette(dark);
+}
+MainWindow #navToolbar GroupComboBox::drop-down
+{
+  border: none;
+}
+MainWindow #navToolbar GroupComboBox::down-arrow
+{
+  image: url(':/icons/collapse_article.png');
+  right: 2px;
+}
+MainWindow #navToolbar #translateLine
+{
+  color: palette(text);
+  background: #DFDFDF;
+  border: 1px solid palette(dark);
+  padding: 4px;
+  margin-top: 2px;
+  margin-bottom: 3px;
+  border-top-left-radius:    0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius:    4px;
+  border-bottom-right-radius: 4px;
+}
+MainWindow #navToolbar #translateLine IconButton[toolTip]
+{
+  qproperty-pixmap: url(':/icons/collapse_article.png');
+}
+MainWindow #navToolbar #translateLine IconButton
+{
+  qproperty-pixmap: url(':/macicons/xs_search_light.svg');
+}
+MainWindow #navToolbar #translateLine:hover
+{
+  background: palette(midlight);
+}
+MainWindow #navToolbar #translateLine:focus
+{
+  background: palette(midlight);
+  border: 1px solid palette(dark);
+}
+MainWindow #navToolbar #translateLine[noResults="true"]
+{
+  background: #FFD2D3;
+}
+/* drop-down list of "Look up in" field */
+MainWindow CompletionList
+{
+  background: palette(base);
+  color: palette(text);
+}
+MainWindow CompletionList::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+MainWindow CompletionList::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+MainWindow CompletionList::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+MainWindow CompletionList::item:selected:hover
+{
+  border: 1px solid #3663DD;
+}
+
+/* =================== Articles Panel =================== */
+
+MainWindow ArticleView #frame,
+MainWindow #definition
+{
+  background: palette(midlight);
+}
+MainWindow #centralWidget QToolButton
+{
+  background: palette(window);
+  border: 1px solid palette(window);
+  padding: 3px;
+}
+MainWindow #centralWidget QToolButton:hover
+{
+  background: #D4D4D4;
+}
+MainWindow #centralWidget QToolButton:pressed
+{
+  background: #7F7F7F;
+}
+MainWindow #centralWidget QToolButton::menu-indicator
+{
+  background: transparent;
+}
+
+/* =============== Pop-up Navigation Panel ============== */
+/* ================ in Full-text Search ================= */
+
+MainWindow #ftsSearchFrame #ftsSearchNext,
+MainWindow #ftsSearchFrame #ftsSearchPrevious
+{
+  background: transparent;
+  border-color: transparent;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 12pt;
+}
+MainWindow #ftsSearchFrame     #ftsSearchNext:focus,
+MainWindow #ftsSearchFrame #ftsSearchPrevious:focus
+{
+  background:       #D4D4D4;
+  border: 1px solid #6990F4;
+}
+MainWindow #ftsSearchFrame     #ftsSearchNext:hover,
+MainWindow #ftsSearchFrame #ftsSearchPrevious:hover
+{
+  background: #D4D4D4;
+}
+MainWindow #ftsSearchFrame     #ftsSearchNext:pressed,
+MainWindow #ftsSearchFrame #ftsSearchPrevious:pressed
+{
+  background: #7F7F7F;
+}
+
+/* ==================== MODAL WINDOWS =================== */
+/* ===================== SCAN_POPUP ===================== */
+
+ScanPopup #outerFrame
+{
+  padding: 2px;
+}
+ScanPopup #ArticleView
+{
+  background: palette(window);
+  border: none;
+}
+ScanPopup #frame
+{
+  background: #E3E3E3;
+  border: 1px solid palette(dark);
+}
+ScanPopup #definition
+{
+  background: #E3E3E3;
+  border: none;
+}
+ScanPopup #groupList
+{
+  color: palette(text);
+  background: #DFDFDF;
+  border: 1px solid palette(dark);
+  padding-left: 8px;
+  border-top-left-radius:    4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius:    0px;
+  border-bottom-right-radius: 0px;
+  selection-background-color: #6990F4;
+  selection-color: palette(bright-text);
+}
+ScanPopup #groupList:hover
+{
+  background: palette(midlight);
+}
+ScanPopup #groupList:on
+{
+  background: transparent;
+  border: 1px solid palette(dark);
+}
+ScanPopup #groupList::drop-down
+{
+  border: none;
+}
+ScanPopup #groupList::down-arrow
+{
+  image: url(':/icons/collapse_article.png');
+  right: 2px;
+}
+ScanPopup #translateLine
+{
+  color: palette(text);
+  background: #DFDFDF;
+  border: 1px solid palette(dark);
+  padding: 4px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  border-top-left-radius:    0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius:    4px;
+  border-bottom-right-radius: 4px;
+}
+ScanPopup #translateLine IconButton[toolTip]
+{
+  qproperty-pixmap: url(':/icons/collapse_article.png');
+}
+ScanPopup #translateLine IconButton
+{
+  qproperty-pixmap: url(':/macicons/xs_search_light.svg');
+}
+ScanPopup #translateLine:hover
+{
+  background: palette(midlight);
+}
+ScanPopup #translateLine:focus
+{
+  background: palette(midlight);
+  border: 1px solid palette(dark);
+}
+ScanPopup #translateLine[noResults="true"]
+{
+  background: #FFD2D3;
+}
+ScanPopup CompletionList
+{
+  background: palette(base);
+  color: palette(text);
+}
+ScanPopup CompletionList::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+ScanPopup CompletionList::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+ScanPopup CompletionList::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+ScanPopup CompletionList::item:selected:hover
+{
+  border: 1px solid #3663DD;
+}
+ScanPopup #outerFrame #goBackButton
+{
+  margin-left: 10px;
+}
+ScanPopup #outerFrame QToolButton
+{
+  width:     16px;
+  height:    16px;
+  padding:    2px;
+  background:       transparent;
+  border: 1px solid transparent;
+}
+ScanPopup #outerFrame QToolButton:hover
+{
+  background: #D4D4D4;
+  border: 1px solid #D4D4D4;
+  border-radius: 4px;
+}
+ScanPopup #outerFrame QToolButton:checked
+{
+  background:       #D4D4D4;
+  border: 1px solid #D4D4D4;
+  border-radius: 4px;
+}
+ScanPopup #outerFrame QToolButton:pressed,
+ScanPopup #outerFrame QToolButton:checked:pressed
+{
+  background:       #7F7F7F;
+  border: 1px solid #7F7F7F;
+  border-radius: 4px;
+}
+ScanPopup #outerFrame QToolButton:checked:hover
+{
+  border: 1px solid #6990F4;
+  border-radius: 4px;
+}
+ScanPopup #dictionaryBar
+{
+  padding: 5px;
+}
+/* dictionary buttons */
+ScanPopup #dictionaryBar QToolButton
+{
+  color: palette(text);
+  background:       transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 2px 2px 2px 3px;
+}
+ScanPopup #dictionaryBar QToolButton:checked
+{
+  color: palette(text);
+  background: #B5B5B5;
+  border: 1px solid #B5B5B5;
+  border-radius: 2px;
+  padding: 2px 2px 2px 3px;
+}
+ScanPopup #dictionaryBar QToolButton:hover
+{
+  border-radius: 2px;
+  border: 1px solid #3663DD;
+}
+ScanPopup #dictionaryBar QToolButton:checked:hover
+{
+  border-radius: 2px;
+  border: 1px solid #3663DD;
+}
+ScanPopup #dictionaryBar QToolButton:pressed,
+ScanPopup #dictionaryBar QToolButton:checked:pressed
+{
+  color: palette(midlight);
+  background:       #7F7F7F;
+  border: 1px solid #7F7F7F;
+}
+ScanPopup #dictionaryBar #qt_toolbar_ext_button:hover
+{
+  background: #B5B5B5;
+  border: 1px solid #B5B5B5;
+}
+ScanPopup #dictionaryBar #qt_toolbar_ext_button:pressed,
+ScanPopup #dictionaryBar #qt_toolbar_ext_button:checked:pressed
+{
+  background:       #7F7F7F;
+  border: 1px solid #7F7F7F;
+}
+
+/* =============== DICTIONARIES... WINDOW =============== */
+
+EditDictionaries QAbstractScrollArea::corner
+{
+  background: transparent;
+}
+EditDictionaries QPlainTextEdit
+{
+  background: palette(base);
+  border: 1px solid #D4D4D4;
+}
+EditDictionaries QTabWidget
+{
+  border: 1px solid #D4D4D4;
+}
+EditDictionaries QStackedWidget
+{
+  background: #E3E3E3;
+}
+EditDictionaries QStackedWidget QStackedWidget
+{
+  background: #DADADA;
+}
+EditDictionaries DictGroupsWidget QTabBar::scroller
+{
+  width: 40px;
+}
+EditDictionaries DictGroupsWidget QToolButton[popupMode="0"]
+{
+  background:       palette(midlight);
+  border: 1px solid palette(dark);
+  padding-top:    1px;
+  padding-bottom: 3px;
+}
+EditDictionaries DictGroupsWidget QToolButton[popupMode="0"]:hover
+{
+  background:       #B5B5B5;
+  border: 1px solid #B5B5B5;
+}
+EditDictionaries DictGroupsWidget QToolButton[popupMode="0"]:pressed
+{
+  background:       #7F7F7F;
+  border: 1px solid #7F7F7F;
+}
+EditDictionaries DictGroupsWidget QToolButton[popupMode="2"]
+{
+  background: palette(window);
+  border: 1px solid palette(window);
+  padding: 0px;
+}
+EditDictionaries DictGroupsWidget QToolButton[popupMode="2"]:hover
+{
+  background: #B5B5B5;
+}
+EditDictionaries DictGroupsWidget QToolButton[popupMode="2"]:pressed
+{
+  background: #7F7F7F;
+}
+EditDictionaries DictGroupsWidget QToolButton[popupMode="2"]::menu-indicator
+{
+  background: transparent;
+}
+EditDictionaries #OrderAndProps #searchLine IconButton[width="30"],
+EditDictionaries #Groups #searchLine IconButton[width="30"]
+{
+  qproperty-pixmap: url(':/macicons/xs_search_light_quick.svg');
+}
+EditDictionaries #OrderAndProps #searchLine IconButton,
+EditDictionaries #Groups #searchLine IconButton
+{
+  qproperty-pixmap: url(':/macicons/xs_search_light_clear.svg');
+}
+EditDictionaries QListView
+{
+  background: palette(base);
+  color: palette(text);
+}
+EditDictionaries QListView::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+EditDictionaries QListView::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+EditDictionaries QListView::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+EditDictionaries QListView::item:selected:active
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+EditDictionaries QListView::item:selected:hover
+{
+  border: 1px solid #3663DD;
+}
+EditDictionaries QListView::item:selected:!active
+{
+  color: palette(text);
+  background: #DADADA;
+  border: 1px solid #DADADA;
+}
+EditDictionaries QListView::item:selected:!active:hover
+{
+  border: 1px solid palette(dark);
+}
+
+/* ============ DICTIONARY ANNOTATION WINDOW ============ */
+
+DictInfo #infoLabel,
+DictInfo #dictionaryFileList
+{
+  background: palette(base);
+}
+
+/* ============ DICTIONARY HEADWORDS WINDOW ============= */
+
+DictHeadwords #headersListView
+{
+  background: palette(base);
+  color: palette(text);
+}
+DictHeadwords #headersListView::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+DictHeadwords #headersListView::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+DictHeadwords #headersListView::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+DictHeadwords #headersListView::item:selected:active
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+DictHeadwords #headersListView::item:selected:hover
+{
+  border: 1px solid #3663DD;
+}
+DictHeadwords #headersListView::item:selected:!active
+{
+  color: palette(text);
+  background: #DADADA;
+  border: 1px solid #DADADA;
+}
+DictHeadwords #headersListView::item:selected:!active:hover
+{
+  border: 1px solid palette(dark);
+}
+
+/* ================== FULL-TEXT SEARCH ================== */
+
+#FullTextSearchDialog #headwordsView
+{
+  background: palette(base);
+  color: palette(text);
+}
+#FullTextSearchDialog #headwordsView::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+#FullTextSearchDialog #headwordsView::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+#FullTextSearchDialog #headwordsView::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+#FullTextSearchDialog #headwordsView::item:selected:active
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+#FullTextSearchDialog #headwordsView::item:selected:hover
+{
+  border: 1px solid #3663DD;
+}
+#FullTextSearchDialog #headwordsView::item:selected:!active
+{
+  color: palette(text);
+  background: #DADADA;
+  border: 1px solid #DADADA;
+}
+#FullTextSearchDialog #headwordsView::item:selected:!active:hover
+{
+  border: 1px solid palette(dark);
+}

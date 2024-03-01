@@ -1,0 +1,432 @@
+
+/* ======= This file is encoded UTF-8 without BOM ======= */
+/*                GD MACOS DARK DEEP THEME                */
+/*             based on Display style: Lingvo             */
+/* ====================================================== */
+
+/* ====================================================== */
+/*                     ARTICLE WINDOW                     */
+/* ====================================================== */
+
+html
+{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+html::after
+{
+  /* adjusting transparency of background image */
+  content: "";
+  top:      0;
+  left:     0;
+  bottom:   0;
+  right:    0;
+  position: absolute;
+  z-index: -1;
+
+  /* here we change background image and adjust its opacity
+     example: url('file:./styles/dark-av-background-openbook.svg'); */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%234E5B65" d="M20.5 19a.5.5 0 0 0-.422.234h-.002L17.098 24H15c-2.757 0-5 2.243-5 5v44c0 2.757 2.243 5 5 5h29.38c.632 1.067 2.303 3 6.12 3s5.488-1.933 6.12-3H86c2.757 0 5-2.243 5-5V29c0-2.757-2.243-5-5-5h-2.098l-2.963-4.74a.5.5 0 0 0-.015-.026A.5.5 0 0 0 80.5 19c-11.045 0-18.598 1.507-23.4 3.023-4.366 1.38-6.248 2.655-6.6 2.9-.352-.245-2.234-1.52-6.6-2.9C39.098 20.507 31.545 19 20.5 19zm.5 1.018c10.66.048 17.98 1.5 22.6 2.959 4.067 1.284 5.944 2.478 6.4 2.79V59.5a.5.5 0 1 0 1 0V25.768c.456-.313 2.333-1.507 6.4-2.791 4.62-1.46 11.94-2.911 22.6-2.96v46c-10.753.049-18.171 1.515-22.895 3.006a.5.5 0 1 0 .303.954c4.662-1.473 12.036-2.951 22.86-2.973L84.432 72H50.65c-.36-.251-2.395-1.601-6.75-2.977-4.724-1.491-12.147-2.957-22.9-3.005v-46zm-1 1.226v45.074l-4 4.8V27.642l4-6.399zm61 0 4 6.399v43.474l-4-4.799V21.244zM26.477 25a.5.5 0 0 0-.004 1c3.83.208 7.122.635 9.935 1.162a.5.5 0 1 0 .184-.982c-2.855-.535-6.191-.97-10.065-1.18a.5.5 0 0 0-.05 0zm47.996 0c-9.141.498-15.32 2.231-19.145 3.629a.5.5 0 1 0 .344.94c3.75-1.37 9.816-3.077 18.855-3.569a.5.5 0 0 0-.054-1zM15 26h.848l-.772 1.234A.5.5 0 0 0 15 27.5v45a.5.5 0 0 0 .5.5h29.684c.143.313.397.788.962 1.354.83.828 2.229 1.646 4.354 1.646s3.525-.818 4.354-1.646c.565-.566.819-1.04.962-1.354H85.5a.5.5 0 0 0 .5-.5v-45a.5.5 0 0 0-.076-.266L85.152 26H86c1.654 0 3 1.346 3 3v44c0 1.654-1.346 3-3 3H56c-.421 0-.8.276-.943.672-.035.095-.891 2.328-4.557 2.328-3.666 0-4.522-2.233-4.553-2.316A.997.997 0 0 0 45 76H15c-1.654 0-3-1.346-3-3V29c0-1.654 1.346-3 3-3zm24.467.807a.5.5 0 0 0-.082.988c1.08.258 2.07.524 2.972.793a.5.5 0 1 0 .286-.96c-.921-.273-1.93-.544-3.028-.806a.5.5 0 0 0-.148-.015zm4.998 1.44a.5.5 0 0 0-.127.974c.346.118.68.234.99.347a.5.5 0 1 0 .344-.94 52.59 52.59 0 0 0-1.01-.355.5.5 0 0 0-.197-.027zM26.477 32a.5.5 0 0 0-.004 1c9.039.491 15.105 2.198 18.855 3.568a.5.5 0 1 0 .344-.94C41.846 34.232 35.668 32.498 26.527 32a.5.5 0 0 0-.05 0zm47.996 0c-1.047.057-2.05.132-3.018.219a.5.5 0 1 0 .09.996A86.96 86.96 0 0 1 74.527 33a.5.5 0 0 0-.054-1zm-5.98.541a.5.5 0 0 0-.022.002.5.5 0 0 0-.035.004 71.856 71.856 0 0 0-3.02.451.5.5 0 1 0 .168.984 71.11 71.11 0 0 1 2.98-.443.5.5 0 0 0-.072-.998zm-6.975 1.266a.5.5 0 0 0-.133.015 54.157 54.157 0 0 0-6.057 1.807.5.5 0 1 0 .344.94 53.089 53.089 0 0 1 5.943-1.774.5.5 0 0 0-.097-.988zM26.477 39a.5.5 0 0 0-.004 1c1.77.096 3.423.24 4.97.418a.5.5 0 0 0 .114-.994 83.976 83.976 0 0 0-5.03-.424.5.5 0 0 0-.05 0zm47.996 0c-9.141.498-15.32 2.231-19.145 3.629a.5.5 0 1 0 .344.94c3.75-1.37 9.816-3.077 18.855-3.569a.5.5 0 0 0-.054-1zm-38.989.988a.5.5 0 0 0-.068.994c4.317.742 7.567 1.73 9.912 2.586a.5.5 0 1 0 .344-.94c-2.393-.873-5.707-1.877-10.088-2.63a.5.5 0 0 0-.1-.01zM26.477 46a.5.5 0 0 0-.004 1c9.039.491 15.105 2.198 18.855 3.568a.5.5 0 1 0 .344-.94C41.846 48.232 35.668 46.498 26.527 46a.5.5 0 0 0-.05 0zm47.996 0c-4.825.262-8.817.87-12.08 1.59a.5.5 0 1 0 .214.976c3.213-.708 7.15-1.306 11.92-1.566a.5.5 0 0 0-.054-1zM58.49 48.607a.5.5 0 0 0-.133.022 51.723 51.723 0 0 0-3.029 1 .5.5 0 1 0 .344.94 50.732 50.732 0 0 1 2.97-.981.5.5 0 0 0-.152-.98zM26.477 53a.5.5 0 0 0-.004 1c4.77.26 8.707.858 11.92 1.566a.5.5 0 1 0 .214-.976c-3.263-.72-7.255-1.328-12.08-1.59a.5.5 0 0 0-.05 0zm47.996 0c-9.141.498-15.32 2.231-19.145 3.629a.5.5 0 1 0 .344.94c3.75-1.37 9.816-3.077 18.855-3.569a.5.5 0 0 0-.054-1zm-31.979 2.607a.5.5 0 0 0-.137.98c1.117.333 2.108.667 2.971.981a.5.5 0 1 0 .344-.94 52.503 52.503 0 0 0-3.03-1 .5.5 0 0 0-.148-.02zM26.477 60a.5.5 0 0 0-.004 1c9.039.491 15.105 2.198 18.855 3.568a.5.5 0 1 0 .344-.94C41.846 62.232 35.668 60.498 26.527 60a.5.5 0 0 0-.05 0zm47.996 0c-9.141.498-15.32 2.231-19.145 3.629a.5.5 0 1 0 .344.94c3.75-1.37 9.816-3.077 18.855-3.569a.5.5 0 0 0-.054-1zm-23.98 1.992A.5.5 0 0 0 50 62.5v2a.5.5 0 1 0 1 0v-2a.5.5 0 0 0-.508-.508zm0 5A.5.5 0 0 0 50 67.5v1a.5.5 0 1 0 1 0v-1a.5.5 0 0 0-.508-.508zm-29.76.012c10.822.022 18.204 1.5 22.867 2.973 2.358.744 4.008 1.477 5.07 2.023h-3.092a.5.5 0 0 0-.1-.006.5.5 0 0 0-.058.006H16.568l4.164-4.996zM46.33 73h8.34a4.05 4.05 0 0 1-.524.646C53.476 74.318 52.375 75 50.5 75s-2.975-.682-3.646-1.354A4.05 4.05 0 0 1 46.33 73z"/></svg>');
+  opacity: .08;
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body
+{
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, "Arial Unicode MS", "Apple Symbol", Wingdings, "Wingdings 2", "Wingdings 3", "Apple Color Emoji", sans-serif;
+  font-size: 10.8pt;
+  margin: 10px;
+  background: transparent;
+}
+
+/* ====================================================== */
+/*                    ARTICLE GENERALS                    */
+/* ====================================================== */
+
+::selection
+{
+  /*
+  color: #8CC6FF #CCE6FF #E8F3FF;
+  background: #5C7E99;
+  */
+  color: #F0FFFF;
+  background: #3E92FF;
+}
+a
+{
+  text-decoration: none;
+  color: #379BFF;
+}
+a:hover
+{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ====================================================== */
+/*                          DSL                           */
+/* ====================================================== */
+
+.dsl_headwords
+{
+  font-weight: bold;
+}
+/* lighten dark colors */
+font[color=blue]          { color: #8882FF !important; }
+font[color=mediumblue]    { color: #8882FF !important; }
+font[color=darkblue]      { color: #8882FF !important; }
+font[color=darkslateblue] { color: #8882FF !important; }
+font[color=midnightblue]  { color: #8882FF !important; }
+font[color=navy]          { color: #8882FF !important; }
+font[color=darkmagenta]   { color: #FF22FF !important; }
+font[color=purple]        { color: #FF22FF !important; }
+font[color=indigo]        { color: #B959FF !important; }
+font[color=darkred]       { color: #D20000 !important; }
+font[color=maroon]        { color: #D20000 !important; }
+font[color=darkslategray] { color: #768390 !important; }
+font[color=dimgray]       { color: #A7A7A7 !important; }
+font[color=green]         { color: #32CD32 !important; }
+font[color=darkgreen]     { color: #32CD32 !important; }
+font[color=forestgreen]   { color: #32CD32 !important; }
+font[color=seagreen]      { color: #00FF7F !important; }
+font[color=mediumseagreen]{ color: #00FF7F !important; }
+font[color=olive]         { color: #F0E68C !important; }
+font[color=darkolivegreen]{ color: #ADFF2F !important; }
+font[color=olivedrab]     { color: #ADFF2F !important; }
+/*---format tags---*/
+.dsl_b
+{
+  font-weight: bold;
+}
+.dsl_stress
+{
+  color: red;
+}
+.dsl_stress_without_accent
+{
+  display: inline;
+}
+.dsl_stress_with_accent
+{
+  display: none;
+}
+/*---structure tags---*/
+.dsl_p,
+.dsl_p :not(a),
+.dsl_article font[color=c_default_color]
+{
+  color: #FF7B3C !important;
+  cursor: help;
+}
+.dsl_opt,
+.dsl_opt .dsl_ex,
+.dsl_opt .dsl_ex :not(a),
+.dsl_opt .dsl_ex font[color],
+.dsl_opt .dsl_trn
+{
+  color: #9B9B9B;
+}
+.dsl_t
+{
+  font-family: "Noto Serif", Georgia, Charter, serif;
+}
+/* icon for "Expand optional parts"
+   required GD ≥ 1.5.0-8 commit f303bb4accea2de7afdeeab2c31aa7ccc1ff2ebc */
+.hidden_expand_opt[src$="expand_opt.png"]
+{
+  display:  inline-block;
+  box-sizing: border-box;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="%23C7CBD3" viewBox="0 0 16 16"><path d="M1 5v1h13V5H1zm0 2v1h13V7H1zm0 2v1h13V9H1zm4 3 2.5 2.5L10 12H5z"/></svg>') no-repeat;
+  width:        16px;
+  height:       16px;
+  padding-left: 16px;
+}
+.hidden_expand_opt[src$="expand_opt.png"]:hover
+{
+  display:  inline-block;
+  box-sizing: border-box;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="%230080FF" viewBox="0 0 16 16"><path d="M1 5v1h13V5H1zm0 2v1h13V7H1zm0 2v1h13V9H1zm4 3 2.5 2.5L10 12H5z"/></svg>') no-repeat;
+  width:        16px;
+  height:       16px;
+  padding-left: 16px;
+}
+.hidden_expand_opt[src$="collapse_opt.png"]
+{
+  display:  inline-block;
+  box-sizing: border-box;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="%23C7CBD3" viewBox="0 0 16 16"><path d="M1 10V9h13v1H1zm0-2V7h13v1H1zm0-2V5h13v1H1zm4-3L7.5.5 10 3H5z"/></svg>') no-repeat;
+  width:        16px;
+  height:       16px;
+  padding-left: 16px;
+}
+.hidden_expand_opt[src$="collapse_opt.png"]:hover
+{
+  display:  inline-block;
+  box-sizing: border-box;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="%230080FF" viewBox="0 0 16 16"><path d="M1 10V9h13v1H1zm0-2V7h13v1H1zm0-2V5h13v1H1zm4-3L7.5.5 10 3H5z"/></svg>') no-repeat;
+  width:        16px;
+  height:       16px;
+  padding-left: 16px;
+}
+/*---search tags---*/
+.dsl_com
+{
+  /*color: inherit;*/
+  color: #C7CBD3;
+}
+.dsl_ex,
+.dsl_ex .dsl_opt,
+.dsl_ex .dsl_opt :not(a),
+.dsl_ex .dsl_trn
+{
+  color: #9B9B9B;
+}
+.dsl_ex .dsl_lang,
+.dsl_ex .dsl_lang .dsl_u,
+.dsl_ex .dsl_lang .dsl_trs
+{
+  /* color index_lang in examples */
+  color: #888FA0 !important;
+}
+/*---link tags---*/
+a.dsl_url:hover
+{
+  cursor: alias;
+}
+/*---media tags---*/
+.dsl_s_wav img,
+.lsa_play img,
+.voiceengines_play img
+{
+  display: none;
+}
+.dsl_s_wav a,
+.lsa_play script + td a,
+.voiceengines_play script + td a
+{
+  display: inline-block;
+  width:       16px;
+  height:      16px;
+  margin-left:  4px;
+  margin-right: 2px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="%23CBD0D8" d="M8.5 1c-.1 0-.2 0-.3.1L3.3 5H1c-.5 0-1 .5-1 1v3c0 .5.5 1 1 1h2.3l4.9 3.9c.2.2.5.1.7-.1.1-.1.1-.2.1-.3v-12c0-.3-.2-.5-.5-.5zM3 9H1V6h2v3zm5 3.5L4 9.3V5.7l4-3.2v10zm2-3.7V6.2c0-.1.1-.2.2-.2h.6c.1 0 .2.1.2.2v2.6c0 .1-.1.2-.2.2h-.6c-.1 0-.2-.1-.2-.2zm2.8 1.2h-.6c-.1 0-.2-.1-.2-.2V5.2c0-.1.1-.2.2-.2h.6c.1 0 .2.1.2.2v4.6c0 .1-.1.2-.2.2z"/></svg>') no-repeat center;
+}
+.dsl_s_wav a
+{
+  vertical-align: text-bottom;
+}
+.lsa_play script + td + td,
+.voiceengines_play script + td + td
+{
+  padding-bottom: 5px;
+}
+.dsl_s_wav a:hover,
+.lsa_play script + td a:hover,
+.voiceengines_play script + td a:hover
+{
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="%230080FF" d="M8.5 1c-.1 0-.2 0-.3.1L3.3 5H1c-.5 0-1 .5-1 1v3c0 .5.5 1 1 1h2.3l4.9 3.9c.2.2.5.1.7-.1.1-.1.1-.2.1-.3v-12c0-.3-.2-.5-.5-.5zM3 9H1V6h2v3zm5 3.5L4 9.3V5.7l4-3.2v10zm2-3.7V6.2c0-.1.1-.2.2-.2h.6c.1 0 .2.1.2.2v2.6c0 .1-.1.2-.2.2h-.6c-.1 0-.2-.1-.2-.2zm2.8 1.2h-.6c-.1 0-.2-.1-.2-.2V5.2c0-.1.1-.2.2-.2h.6c.1 0 .2.1.2.2v4.6c0 .1-.1.2-.2.2z"/></svg>') no-repeat center;
+}
+.dsl_s_wav a:active,
+.lsa_play script + td a:active,
+.voiceengines_play script + td a:active
+{
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="%230080FF" d="M8.5 1c-.1 0-.2 0-.3.1L3.3 5H1c-.5 0-1 .5-1 1v3c0 .5.5 1 1 1h2.3l4.9 3.9c.2.2.5.1.7-.1.1-.1.1-.2.1-.3v-12c0-.3-.2-.5-.5-.5zM3 9H1V6h2v3zm5 3.5L4 9.3V5.7l4-3.2v10zm3.5-5c0 .8-.7 1.5-1.5 1.5V6c.8 0 1.5.7 1.5 1.5zm4 0c0 3-2.5 5.5-5.5 5.5v-1c2.5 0 4.5-2 4.5-4.5S12.5 3 10 3V2c3 0 5.5 2.5 5.5 5.5zm-2 0c0 1.9-1.6 3.5-3.5 3.5v-1c1.4 0 2.5-1.1 2.5-2.5S11.4 5 10 5V4c1.9 0 3.5 1.6 3.5 3.5z"/></svg>') no-repeat center;
+}
+.dsl_video img
+{
+  display: none;
+}
+.dsl_video .img
+{
+  display: inline-block;
+  vertical-align: text-bottom;
+  width:       16px;
+  height:      16px;
+  margin-left:  4px;
+  margin-right: 2px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="%23CBD0D8" d="M1.5 1C.7 1 0 1.7 0 2.5v8c0 .8.7 1.5 1.5 1.5H7v1H4v1h7v-1H8v-1h5.5c.8 0 1.5-.7 1.5-1.5v-8c0-.8-.7-1.5-1.5-1.5h-12zm0 1h12c.3 0 .5.2.5.5v8c0 .3-.2.5-.5.5h-12c-.3 0-.5-.2-.5-.5v-8c0-.3.2-.5.5-.5zM3 4H2V3h1v1zm0 2H2V5h1v1zm0 2H2V7h1v1zm0 2H2V9h1v1zm10-6h-1V3h1v1zm0 2h-1V5h1v1zm0 2h-1V7h1v1zm0 2h-1V9h1v1z"/></svg>') no-repeat center;
+}
+.dsl_video .img:hover
+{
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="%230080FF" d="M1.5 1C.7 1 0 1.7 0 2.5v8c0 .8.7 1.5 1.5 1.5H7v1H4v1h7v-1H8v-1h5.5c.8 0 1.5-.7 1.5-1.5v-8c0-.8-.7-1.5-1.5-1.5h-12zm0 1h12c.3 0 .5.2.5.5v8c0 .3-.2.5-.5.5h-12c-.3 0-.5-.2-.5-.5v-8c0-.3.2-.5.5-.5zM3 4H2V3h1v1zm0 2H2V5h1v1zm0 2H2V7h1v1zm0 2H2V9h1v1zm10-6h-1V3h1v1zm0 2h-1V5h1v1zm0 2h-1V7h1v1zm0 2h-1V9h1v1z"/></svg>') no-repeat center;
+}
+.dsl_video .img:active
+{
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="%230080FF" d="M13.5 1h-12C.7 1 0 1.7 0 2.5v8c0 .8.7 1.5 1.5 1.5H7v1H4v1h7v-1H8v-1h5.5c.8 0 1.5-.7 1.5-1.5v-8c0-.8-.7-1.5-1.5-1.5zm.5 9.5c0 .3-.2.5-.5.5h-12c-.3 0-.5-.2-.5-.5v-8c0-.3.2-.5.5-.5h12c.3 0 .5.2.5.5v8zM3 4H2V3h1v1zm0 2H2V5h1v1zm0 2H2V7h1v1zm0 2H2V9h1v1zm10-6h-1V3h1v1zm0 2h-1V5h1v1zm0 2h-1V7h1v1zm0 2h-1V9h1v1zm-8 0V3l6 3.5L5 10z"/></svg>') no-repeat center;
+}
+
+
+/* ====================================================== */
+/*                      ARTICLE BOXES                     */
+/* ====================================================== */
+
+.gdarticle
+{
+  margin-top:    10px;
+  margin-bottom: 10px;
+  padding:        5px;
+
+  color:            #CBD0D8;
+  background:       #313336;
+  border: 1px solid #5A5A5A;
+  border-radius: 6px;
+}
+.gdactivearticle
+{
+  border: 1px solid #0080FF;
+}
+.gdarticleseparator + script + .gdarticle .gddictname
+{
+  border-top: 1px solid #5A5A5A;
+}
+.gdarticleseparator + script + .gdactivearticle .gddictname
+{
+  border-top: 1px solid #0080FF;
+}
+.gdarticleseparator
+{
+  display: none;
+}
+/* hide the 'From ' string which preceeds dictionary name in the heading */
+.gdfromprefix
+{
+  display: none;
+}
+.gddictname
+{
+  /* needed to be able to reorder elements, e.g. icon, dictionary name, collapse icon */
+  display: -webkit-box;
+  font-size: .85em;
+  font-weight: normal;
+  float: right;
+  margin: -6px;
+  margin-bottom: 5px;
+  margin-left: 2px;
+  padding: .3em .3em .2em .7em;
+
+  color:            #CBD0D8;
+  background:       #26282B;
+  border: 1px solid #5A5A5A;
+
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+/* actual text with the dictionary title */
+.gddicttitle
+{
+  display: block;
+  -webkit-box-ordinal-group: 1;
+}
+.gdactivearticle .gddictname
+{
+  display: -webkit-box;
+  font-size: .9em;
+  font-weight: normal;
+  float: right;
+  margin: -6px;
+  margin-bottom: 5px;
+  margin-left: 2px;
+  padding: .3em .3em .2em .7em;
+
+  color:            #FFFFFF;
+  background:       #0080FF;
+  border: 1px solid #0080FF;
+}
+.gdcollapsedarticle .gddictname
+{
+  opacity: 0.7;
+}
+/* article collapsed */
+.gdcollapsedarticle
+{
+  background:       #232323;
+  border: 1px solid #5A5A5A;
+  border-radius: 0px;
+  /* here we change pattern for the collapsed article blocks
+     example: url('file:./styles/Dark/dark-av-collapse-pattern.png'); */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAACgAgMAAADm7QMnAAAADFBMVEWIiIixsbGxsbGxsbF0SLUbAAAABHRSTlP/bytS3QghxwAAAEVJREFUeAFjYA3FAA4Mq17tWrcalVhBtOBK7IL/McFf4rUPZYtGLRq1aNSiUYtGLSJcoYzWR4PBolGLRi0atWjUotH6CAA67a9q5+gpSAAAAABJRU5ErkJggg==');
+}
+/* move collapse/expand buttons to the last, 3rd position */
+.collapse_expand_area
+{
+  display: block;
+  -webkit-box-ordinal-group: 3;
+}
+.gddicticon
+{
+  display: block;
+  vertical-align: text-bottom;
+  padding-right: -1em;
+  padding-left: 0.3em;
+  -webkit-box-ordinal-group: 2;
+}
+.gdexpandicon,
+.gdexpandicon:hover,
+.gdcollapseicon,
+.gdcollapseicon:hover
+{
+  width: 15px;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  vertical-align:  text-bottom;
+  padding-left: -5px;
+  margin-left: 0px;
+}
+.gdexpandicon
+{
+  background-image: url('qrcx://localhost/icons/expand_article.png');
+}
+.gdexpandicon:hover
+{
+  background-image: url('qrcx://localhost/icons/expand_article_hovered.png');
+}
+.gdcollapseicon
+{
+  background-image: url('qrcx://localhost/icons/collapse_article.png');
+}
+.gdcollapseicon:hover
+{
+  background-image: url('qrcx://localhost/icons/collapse_article_hovered.png');
+}
+/* first headword in a multi-headword DSL article */
+.gdarticlebody > span:first-child .dsl_headwords,
+.gdarticlebody > h3:first-child
+{
+  margin-top: -3px;
+  display: inline-block;
+}
+.gdspellsuggestion
+{
+  margin-top: 1.5em;
+}
+
+/* ====================================================== */
+/*                      WELCOME PAGE                      */
+/* ====================================================== */
+
+.gdnotfound,
+.gdstemmedsuggestion_head,
+.gdstemmedsuggestion_body
+{
+  color: #CBD0D8;
+}
+.gdstemmedsuggestion_body > a
+{
+  color: #0080FF;
+}
+
+/* remove ads */
+body > h3,
+body > p
+{
+  visibility: hidden;
+  background: transparent;
+}
+body
+{
+  background: transparent;
+}
