@@ -123,9 +123,12 @@ Sources::Sources( QWidget * parent, Config::Class const & cfg):
   ui.forvoLanguageCodes->setText( forvo.languageCodes );
 
   // Text to speech
-#if defined( Q_OS_WIN32 ) || defined( Q_OS_MAC )
+#if defined( Q_OS_WIN32 )
   textToSpeechSource = new TextToSpeechSource( this, cfg.voiceEngines );
   ui.tabWidget->addTab( textToSpeechSource, QIcon(":/icons/playsound_color.png"), tr( "Text to Speech" ) );
+#elif defined( Q_OS_MAC )
+  textToSpeechSource = new TextToSpeechSource( this, cfg.voiceEngines );
+  ui.tabWidget->addTab( textToSpeechSource, tr( "Text to Speech" ) );
 #endif
 
   if ( Config::isPortableVersion() )

@@ -39,10 +39,10 @@
       <bool>false</bool>
      </property>
      <widget class="QWidget" name="tab">
-      <attribute name="icon">
+      <!-- <attribute name="icon">
        <iconset resource="resources.qrc">
         <normaloff>:/icons/interface.png</normaloff>:/icons/interface.png</iconset>
-      </attribute>
+      </attribute> -->
       <attribute name="title">
        <string>&amp;Interface</string>
       </attribute>
@@ -372,10 +372,10 @@ be the last ones.</string>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_4">
-      <attribute name="icon">
+      <!-- <attribute name="icon">
        <iconset resource="resources.qrc">
         <normaloff>:/icons/wizard.png</normaloff>:/icons/wizard.png</iconset>
-      </attribute>
+      </attribute> -->
       <attribute name="title">
        <string>&amp;Scan Popup</string>
       </attribute>
@@ -718,10 +718,10 @@ seconds, which is specified here.</string>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_5">
-      <attribute name="icon">
+      <!-- <attribute name="icon">
        <iconset resource="resources.qrc">
         <normaloff>:/icons/hotkeys.png</normaloff>:/icons/hotkeys.png</iconset>
-      </attribute>
+      </attribute> -->
       <attribute name="title">
        <string>Hotkeys</string>
       </attribute>
@@ -863,10 +863,10 @@ p, li { white-space: pre-wrap; }
       </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
-      <attribute name="icon">
+      <!-- <attribute name="icon">
        <iconset resource="resources.qrc">
         <normaloff>:/icons/playsound_color.png</normaloff>:/icons/playsound_color.png</iconset>
-      </attribute>
+      </attribute> -->
       <attribute name="title">
        <string>&amp;Audio</string>
       </attribute>
@@ -969,10 +969,10 @@ p, li { white-space: pre-wrap; }
       </layout>
      </widget>
      <widget class="QWidget" name="tab_3">
-      <attribute name="icon">
+      <!-- <attribute name="icon">
        <iconset resource="resources.qrc">
         <normaloff>:/icons/network.png</normaloff>:/icons/network.png</iconset>
-      </attribute>
+      </attribute> -->
       <attribute name="title">
        <string>&amp;Network</string>
       </attribute>
@@ -1251,10 +1251,10 @@ download page.</string>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_FTS">
-      <attribute name="icon">
+      <!-- <attribute name="icon">
        <iconset resource="resources.qrc">
         <normaloff>:/icons/system-search.png</normaloff>:/icons/system-search.png</iconset>
-      </attribute>
+      </attribute> -->
       <attribute name="title">
        <string>Full-text search</string>
       </attribute>

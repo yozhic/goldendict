@@ -1809,8 +1809,10 @@ void ArticleView::contextMenuRequested( QPoint const & pos )
 
       if ( !popupView )
       {
-        followLinkNewTab = new QAction( QIcon( ":/icons/addtab.png" ),
-                                        tr( "Open Link in New &Tab" ), &menu );
+        followLinkNewTab = new QAction( tr( "Open Link in New &Tab" ), &menu );
+        #ifndef Q_OS_MAC
+          followLinkNewTab->setIcon( QIcon( ":/icons/addtab.png" ) );
+        #endif
         menu.addAction( followLinkNewTab );
       }
     }
@@ -1866,10 +1868,12 @@ void ArticleView::contextMenuRequested( QPoint const & pos )
 
     if ( !popupView )
     {
-      lookupSelectionNewTab = new QAction( QIcon( ":/icons/addtab.png" ),
-                                           tr( "Look up \"%1\" in &New Tab" ).
+      lookupSelectionNewTab = new QAction( tr( "Look up \"%1\" in &New Tab" ).
                                            arg( text ),
                                            &menu );
+      #ifndef Q_OS_MAC
+        lookupSelectionNewTab->setIcon( QIcon( ":/icons/addtab.png" ) );
+      #endif
       menu.addAction( lookupSelectionNewTab );
 
       sendWordToInputLineAction = new QAction( tr( "Send \"%1\" to input line" ).
@@ -1899,10 +1903,12 @@ void ArticleView::contextMenuRequested( QPoint const & pos )
 
       if ( !popupView )
       {
-        lookupSelectionNewTabGr = new QAction( QIcon( ":/icons/addtab.png" ),
-                                               tr( "Look up \"%1\" in %2 in &New Tab" ).
+        lookupSelectionNewTabGr = new QAction( tr( "Look up \"%1\" in %2 in &New Tab" ).
                                                arg( text ).
                                                arg( altGroup->name ), &menu );
+        #ifndef Q_OS_MAC
+          lookupSelectionNewTabGr->setIcon( QIcon( ":/icons/addtab.png" ) );
+        #endif
         menu.addAction( lookupSelectionNewTabGr );
       }
     }

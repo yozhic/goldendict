@@ -369,10 +369,10 @@
    </widget>
   </widget>
   <action name="dictionaries">
-   <property name="icon">
+   <!-- <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/book.png</normaloff>:/icons/book.png</iconset>
-   </property>
+   </property> -->
    <property name="text">
     <string>&amp;Dictionaries...</string>
    </property>
@@ -384,10 +384,10 @@
    </property>
   </action>
   <action name="preferences">
-   <property name="icon">
+   <!-- <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/configure.png</normaloff>:/icons/configure.png</iconset>
-   </property>
+   </property> -->
    <property name="text">
     <string>&amp;Preferences...</string>
    </property>
@@ -522,10 +522,10 @@
    </property>
   </action>
   <action name="newTab">
-   <property name="icon">
+   <!-- <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/addtab.png</normaloff>:/icons/addtab.png</iconset>
-   </property>
+   </property> -->
    <property name="text">
     <string>&amp;New Tab</string>
    </property>

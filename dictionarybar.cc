@@ -23,7 +23,11 @@ DictionaryBar::DictionaryBar( QWidget * parent,
 {
   setObjectName( "dictionaryBar" );
 
-  maxDictionaryRefsAction = new QAction(  QIcon(":/icons/expand_opt.png"), tr( "Extended menu with all dictionaries..." ), this );
+  maxDictionaryRefsAction = new QAction(  tr( "Extended menu with all dictionaries..." ), this );
+
+  #ifndef Q_OS_MAC
+    maxDictionaryRefsAction->setIcon( QIcon(":/icons/expand_opt.png") );
+  #endif
 
   connect( &events, SIGNAL( mutedDictionariesChanged() ),
            this, SLOT( mutedDictionariesChanged() ) );
@@ -109,8 +113,11 @@ void DictionaryBar::showContextMenu( QContextMenuEvent * event, bool extended )
 {
   QMenu menu( this );
 
-  QAction * editAction =
-      menu.addAction( QIcon( ":/icons/bookcase.png" ), tr( "Edit this group" ) );
+  #ifdef Q_OS_MAC
+    QAction * editAction = menu.addAction( tr( "Edit this group" ) );
+  #else
+    QAction * editAction = menu.addAction( QIcon( ":/icons/bookcase.png" ), tr( "Edit this group" ) );
+  #endif
 
   QAction * infoAction = NULL;
   QAction * headwordsAction = NULL;

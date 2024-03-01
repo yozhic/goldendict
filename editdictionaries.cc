@@ -43,9 +43,15 @@ EditDictionaries::EditDictionaries( QWidget * parent, Config::Class & cfg_,
 
   ui.tabs->clear();
 
-  ui.tabs->addTab( &sources, QIcon(":/icons/reload.png"), tr( "&Sources" ) );
-  ui.tabs->addTab( orderAndProps.get(), QIcon(":/icons/book.png"), tr( "&Dictionaries" ) );
-  ui.tabs->addTab( groups.get(), QIcon(":/icons/bookcase.png"), tr( "&Groups" ) );
+  ui.tabs->addTab( &sources, tr( "&Sources" ) );
+  ui.tabs->addTab( orderAndProps.get(), tr( "&Dictionaries" ) );
+  ui.tabs->addTab( groups.get(), tr( "&Groups" ) );
+
+  #ifndef Q_OS_MAC
+    ui.tabs->setTabIcon( 0, QIcon(":/icons/reload.png") );
+    ui.tabs->setTabIcon( 1, QIcon(":/icons/book.png") );
+    ui.tabs->setTabIcon( 2, QIcon(":/icons/bookcase.png") );
+  #endif
 
   connect( ui.buttons, SIGNAL( clicked( QAbstractButton * ) ),
            this, SLOT( buttonBoxClicked( QAbstractButton * ) ) );
@@ -241,10 +247,16 @@ void EditDictionaries::acceptChangedSources( bool rebuildGroups )
   if ( rebuildGroups )
   {
     orderAndProps = new OrderAndProps( this, savedOrder, savedInactive, dictionaries );
-    ui.tabs->insertTab( 1, orderAndProps.get(), QIcon(":/icons/book.png"), tr( "&Dictionaries" ) );
+    ui.tabs->insertTab( 1, orderAndProps.get(), tr( "&Dictionaries" ) );
+    #ifndef Q_OS_MAC
+      ui.tabs->setTabIcon( 1, QIcon(":/icons/book.png") );
+    #endif
 
     groups = new Groups( this, dictionaries, savedGroups, orderAndProps->getCurrentDictionaryOrder() );
-    ui.tabs->insertTab( 2, groups.get(), QIcon(":/icons/bookcase.png"), tr( "&Groups" ) );
+    ui.tabs->insertTab( 2, groups.get(), tr( "&Groups" ) );
+    #ifndef Q_OS_MAC
+      ui.tabs->setTabIcon( 2, QIcon(":/icons/bookcase.png") );
+    #endif
 
     ui.tabs->setUpdatesEnabled( true );
 
