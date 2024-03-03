@@ -10,19 +10,27 @@
         <file>macicons/addtab_xs.svg</file>
         <file>macicons/book.svg</file>
         <file>macicons/bookcase.svg</file>
+        <file>macicons/closetab_xs.svg</file>
         <file>macicons/filesave.svg</file>
         <file>macicons/folder.png</file>
+        <file>macicons/highlighter_xs.svg</file>
         <file>macicons/logo.svg</file>
         <file>macicons/next.svg</file>
+        <file>macicons/next_xs.svg</file>
+        <file>macicons/ontop.svg</file>
+        <file>macicons/playsound.svg</file>
         <file>macicons/playsound_full.svg</file>
         <file>macicons/previous.svg</file>
+        <file>macicons/previous_xs.svg</file>
         <file>macicons/print.svg</file>
         <file>macicons/pushpin.svg</file>
         <file>macicons/star.svg</file>
         <file>macicons/star_blue.svg</file>
         <file>macicons/star_blue_xs.svg</file>
         <file>macicons/star_xs.svg</file>
+        <file>macicons/system-search.svg</file>
         <file>macicons/windows-list.svg</file>
+        <file>macicons/wizard.svg</file>
         <file>macicons/xs_search_dark.svg</file>
         <file>macicons/xs_search_dark_clear.svg</file>
         <file>macicons/xs_search_dark_quick.svg</file>
