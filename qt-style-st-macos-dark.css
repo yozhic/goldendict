@@ -60,6 +60,50 @@ QToolTip
 {
   padding: 4px;
 }
+/*---list view---*/
+QListView
+{
+  background: palette(mid);
+  color: palette(text);
+}
+QListView::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+QListView::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+QListView::item:selected
+{
+  color: #FFFFFF;
+  background: palette(highlight);
+  border: 1px solid palette(highlight);
+}
+QListView::item:selected:active
+{
+  color: #FFFFFF;
+  background: palette(highlight);
+  border: 1px solid palette(highlight);
+}
+QListView::item:selected:hover
+{
+  border: 1px solid #0080FF;
+}
+QListView::item:selected:!active
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+QListView::item:selected:!active:hover
+{
+  border: 1px solid #5A5A5A;
+}
 /*---tree view---*/
 QTreeView
 {
@@ -384,21 +428,24 @@ MainWindow #navToolbar QToolButton
 {
   background:       transparent;
   border: 1px solid transparent;
-  /*padding: 2px;*/
+  border-radius: 4px;
   margin:  2px 0px;
+  /*padding: 2px;*/
 }
 MainWindow #navToolbar QToolButton:hover
 {
   background:       #414141;
   border: 1px solid #414141;
-  border-radius: 4px;
 }
 MainWindow #navToolbar QToolButton:checked
 {
   background:       palette(highlight);
+  border: 1px solid transparent;
+}
+MainWindow #navToolbar QToolButton:checked:hover
+{
   border: 1px solid palette(highlight);
 }
-
 MainWindow #navToolbar QToolButton:pressed,
 MainWindow #navToolbar QToolButton:checked:pressed
 {
@@ -811,49 +858,6 @@ EditDictionaries #Groups #searchLine IconButton
 {
   qproperty-pixmap: url(':/macicons/xs_search_dark_clear.svg');
 }
-EditDictionaries  QListView
-{
-  background: palette(mid);
-  color: palette(text);
-}
-EditDictionaries  QListView::item
-{
-  color: palette(text);
-  background: transparent;
-  border: 1px solid transparent;
-}
-EditDictionaries  QListView::item:hover
-{
-  color: palette(text);
-  background: palette(window);
-  border: 1px solid palette(window);
-}
-EditDictionaries  QListView::item:selected
-{
-  color: #FFFFFF;
-  background: palette(highlight);
-  border: 1px solid palette(highlight);
-}
-EditDictionaries  QListView::item:selected:active
-{
-  color: #FFFFFF;
-  background: palette(highlight);
-  border: 1px solid palette(highlight);
-}
-EditDictionaries  QListView::item:selected:hover
-{
-  border: 1px solid #0080FF;
-}
-EditDictionaries  QListView::item:selected:!active
-{
-  color: palette(text);
-  background: palette(window);
-  border: 1px solid palette(window);
-}
-EditDictionaries  QListView::item:selected:!active:hover
-{
-  border: 1px solid #5A5A5A;
-}
 
 /* ============ DICTIONARY ANNOTATION WINDOW ============ */
 
@@ -953,4 +957,44 @@ DictHeadwords #headersListView::item:selected:!active:hover
 #FullTextSearchDialog #headwordsView::item:selected:!active:hover
 {
   border: 1px solid #5A5A5A;
+}
+
+/* ===================== HELP WINDOW ==================== */
+
+QDialog[windowTitle*="GoldenDict"] QTextBrowser
+{
+  background: palette(base);
+  padding-top:          7px;
+  padding-left:        14px;
+}
+QHelpContentWidget
+{
+  padding-top:         4px;
+}
+QHelpIndexWidget
+{
+  background: palette(mid);
+  padding-top:         6px;
+  padding-left:        6px;
+}
+QDialog[windowTitle*="GoldenDict"] QListView::item
+{
+  padding-bottom: 1px;
+}
+QDialog[windowTitle*="GoldenDict"] QToolButton
+{
+  background:       transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin:  2px 0px;
+}
+QDialog[windowTitle*="GoldenDict"] QToolButton:hover
+{
+  background:       #414141;
+  border: 1px solid #414141;
+}
+QDialog[windowTitle*="GoldenDict"] QToolButton:pressed
+{
+  background:       palette(mid);
+  border: 1px solid palette(mid);
 }
