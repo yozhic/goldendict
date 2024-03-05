@@ -512,7 +512,11 @@ void LsaDictionary::loadIcon() throw()
   if( !loadIconFromFile( fileName ) )
   {
     // Load failed -- use default icons
+#ifdef Q_OS_MAC
+    dictionaryNativeIcon = dictionaryIcon = QIcon(":/macicons/playsound.svg");
+#else
     dictionaryNativeIcon = dictionaryIcon = QIcon(":/icons/playsound.png");
+#endif
   }
 
   dictionaryIconLoaded = true;

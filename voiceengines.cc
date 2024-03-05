@@ -122,7 +122,13 @@ void VoiceEnginesDictionary::loadIcon() throw()
       loadIconFromFile( fInfo.absoluteFilePath(), true );
   }
   if ( dictionaryIcon.isNull() )
+    {
+#ifdef Q_OS_MAC
+    dictionaryIcon = dictionaryNativeIcon = QIcon( ":/macicons/playsound.svg" );
+#else
     dictionaryIcon = dictionaryNativeIcon = QIcon( ":/icons/playsound.png" );
+#endif
+    }
   dictionaryIconLoaded = true;
 }
 
