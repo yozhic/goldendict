@@ -429,7 +429,7 @@ MainWindow #navToolbar QToolButton
   background:       transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  margin:  2px 0px;
+  margin: 2px 0px;
   /*padding: 2px;*/
 }
 MainWindow #navToolbar QToolButton:hover
@@ -731,7 +731,6 @@ ScanPopup #outerFrame QToolButton:checked
   border: 1px solid palette(highlight);
   border-radius: 4px;
 }
-
 ScanPopup #outerFrame QToolButton:pressed,
 ScanPopup #outerFrame QToolButton:checked:pressed
 {

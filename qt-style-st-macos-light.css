@@ -67,6 +67,50 @@ QToolTip
 {
   padding: 4px;
 }
+/*---list view---*/
+QListView
+{
+  background: palette(base);
+  color: palette(text);
+}
+QListView::item
+{
+  color: palette(text);
+  background: transparent;
+  border: 1px solid transparent;
+}
+QListView::item:hover
+{
+  color: palette(text);
+  background: palette(window);
+  border: 1px solid palette(window);
+}
+QListView::item:selected
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+QListView::item:selected:active
+{
+  color: palette(bright-text);
+  background: #6990F4;
+  border: 1px solid #6990F4;
+}
+QListView::item:selected:hover
+{
+  border: 1px solid #3663DD;
+}
+QListView::item:selected:!active
+{
+  color: palette(text);
+  background: #DADADA;
+  border: 1px solid #DADADA;
+}
+QListView::item:selected:!active:hover
+{
+  border: 1px solid palette(dark);
+}
 /*---tree view---*/
 QTreeView
 {
@@ -328,6 +372,12 @@ MainWindow #favoritesPane #favoritesTree::item
   background: transparent;
   border: 1px solid transparent;
 }
+MainWindow #searchPane     #wordList::item,
+MainWindow #dictsPane     #dictsList::item,
+MainWindow #historyPane #historyList::item
+{
+  padding-bottom: 1px;
+}
 MainWindow #searchPane     #wordList::item:hover,
 MainWindow #dictsPane     #dictsList::item:hover,
 MainWindow #historyPane #historyList::item:hover,
@@ -395,14 +445,14 @@ MainWindow #navToolbar QToolButton
 {
   background:       transparent;
   border: 1px solid transparent;
+  border-radius: 4px;
+  margin: 2px 0px;
   /*padding: 2px;*/
-  margin:  2px 0px;
 }
 MainWindow #navToolbar QToolButton:hover
 {
   background:       #B5B5B5;
   border: 1px solid #B5B5B5;
-  border-radius: 4px;
 }
 MainWindow #navToolbar QToolButton:checked
 {
@@ -838,49 +888,6 @@ EditDictionaries #Groups #searchLine IconButton
 {
   qproperty-pixmap: url(':/macicons/xs_search_light_clear.svg');
 }
-EditDictionaries QListView
-{
-  background: palette(base);
-  color: palette(text);
-}
-EditDictionaries QListView::item
-{
-  color: palette(text);
-  background: transparent;
-  border: 1px solid transparent;
-}
-EditDictionaries QListView::item:hover
-{
-  color: palette(text);
-  background: palette(window);
-  border: 1px solid palette(window);
-}
-EditDictionaries QListView::item:selected
-{
-  color: palette(bright-text);
-  background: #6990F4;
-  border: 1px solid #6990F4;
-}
-EditDictionaries QListView::item:selected:active
-{
-  color: palette(bright-text);
-  background: #6990F4;
-  border: 1px solid #6990F4;
-}
-EditDictionaries QListView::item:selected:hover
-{
-  border: 1px solid #3663DD;
-}
-EditDictionaries QListView::item:selected:!active
-{
-  color: palette(text);
-  background: #DADADA;
-  border: 1px solid #DADADA;
-}
-EditDictionaries QListView::item:selected:!active:hover
-{
-  border: 1px solid palette(dark);
-}
 
 /* ============ DICTIONARY ANNOTATION WINDOW ============ */
 
@@ -980,4 +987,50 @@ DictHeadwords #headersListView::item:selected:!active:hover
 #FullTextSearchDialog #headwordsView::item:selected:!active:hover
 {
   border: 1px solid palette(dark);
+}
+
+/* ===================== HELP WINDOW ==================== */
+
+QDialog[windowTitle*="GoldenDict"] QTextBrowser
+{
+  background: palette(base);
+  padding-top:          7px;
+  padding-left:        14px;
+}
+QHelpContentWidget
+{
+  background: palette(alternate-base);
+  padding-top:         4px;
+}
+QHelpIndexWidget
+{
+  background: palette(alternate-base);
+  padding-top:         6px;
+  padding-left:        6px;
+}
+QDialog[windowTitle*="GoldenDict"] QTreeView::branch
+{
+  background: palette(alternate-base);
+  border: 1px solid palette(alternate-base);
+}
+QDialog[windowTitle*="GoldenDict"] QListView::item
+{
+  padding-bottom: 1px;
+}
+QDialog[windowTitle*="GoldenDict"] QToolButton
+{
+  background:       transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin:  2px 0px;
+}
+QDialog[windowTitle*="GoldenDict"] QToolButton:hover
+{
+  background:       #B5B5B5;
+  border: 1px solid #B5B5B5;
+}
+QDialog[windowTitle*="GoldenDict"] QToolButton:pressed
+{
+  background:       #7F7F7F;
+  border: 1px solid #7F7F7F;
 }
