@@ -190,13 +190,13 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   navToolbar = addToolBar( tr( "&Navigation" ) );
   navToolbar->setObjectName( "navToolbar" );
 
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     navBack = navToolbar->addAction( QIcon( ":/macicons/previous.svg" ), tr( "Back" ) );
     navForward = navToolbar->addAction( QIcon( ":/macicons/next.svg" ), tr( "Forward" ) );
-  #else
+#else
     navBack = navToolbar->addAction( QIcon( ":/icons/previous.png" ), tr( "Back" ) );
     navForward = navToolbar->addAction( QIcon( ":/icons/next.png" ), tr( "Forward" ) );
-  #endif
+#endif
   navToolbar->widgetForAction( navBack )->setObjectName( "backButton" );
   navToolbar->widgetForAction( navForward )->setObjectName( "forwardButton" );
 
@@ -222,11 +222,11 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   beforeScanPopupSeparator->setVisible( cfg.preferences.enableScanPopup );
   navToolbar->widgetForAction( beforeScanPopupSeparator )->setObjectName( "beforeScanPopupSeparator" );
 
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     enableScanPopup = navToolbar->addAction( QIcon( ":/macicons/wizard.svg" ), tr( "Scan Popup" ) );
-  #else
+#else
     enableScanPopup = navToolbar->addAction( QIcon( ":/icons/wizard.png" ), tr( "Scan Popup" ) );
-  #endif
+#endif
   enableScanPopup->setCheckable( true );
   enableScanPopup->setVisible( cfg.preferences.enableScanPopup );
   navToolbar->widgetForAction( enableScanPopup )->setObjectName( "scanPopupButton" );
@@ -241,11 +241,11 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   navToolbar->widgetForAction( afterScanPopupSeparator )->setObjectName( "afterScanPopupSeparator" );
 
   // sound
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     navPronounce = navToolbar->addAction( QIcon( ":/macicons/playsound_full.svg" ), tr( "Pronounce Word (Alt+S)" ) );
-  #else
+#else
     navPronounce = navToolbar->addAction( QIcon( ":/icons/playsound_full.png" ), tr( "Pronounce Word (Alt+S)" ) );
-  #endif
+#endif
   navPronounce->setShortcut( QKeySequence( "Alt+S" ) );
   navPronounce->setEnabled( false );
   navToolbar->widgetForAction( navPronounce )->setObjectName( "soundButton" );
@@ -257,48 +257,48 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   // named separator (to be able to hide it via CSS)
   navToolbar->widgetForAction( navToolbar->addSeparator() )->setObjectName( "separatorBeforeZoom" );
 
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     zoomIn = navToolbar->addAction( QIcon( ":/macicons/zoomin.svg" ), tr( "Zoom In" ) );
-  #else
+#else
     zoomIn = navToolbar->addAction( QIcon( ":/icons/icon32_zoomin.png" ), tr( "Zoom In" ) );
-  #endif
+#endif
   zoomIn->setShortcuts( QList< QKeySequence >() <<
                        QKeySequence::ZoomIn <<
                        QKeySequence( "Ctrl+=" ) );
   navToolbar->widgetForAction( zoomIn )->setObjectName( "zoomInButton" );
 
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     zoomOut = navToolbar->addAction( QIcon( ":/macicons/zoomout.svg" ), tr( "Zoom Out" ) );
-  #else
+#else
     zoomOut = navToolbar->addAction( QIcon( ":/icons/icon32_zoomout.png" ), tr( "Zoom Out" ) );
-  #endif
+#endif
   zoomOut->setShortcut( QKeySequence::ZoomOut );
   navToolbar->widgetForAction( zoomOut )->setObjectName( "zoomOutButton" );
 
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     zoomBase = navToolbar->addAction( QIcon( ":/macicons/zoombase.svg" ), tr( "Normal Size" ) );
-  #else
+#else
     zoomBase = navToolbar->addAction( QIcon( ":/icons/icon32_zoombase.png" ), tr( "Normal Size" ) );
-  #endif
+#endif
   zoomBase->setShortcut( QKeySequence( "Ctrl+0" ) );
   navToolbar->widgetForAction( zoomBase )->setObjectName( "zoomBaseButton" );
 
   // named separator (to be able to hide it via CSS)
   navToolbar->widgetForAction( navToolbar->addSeparator() )->setObjectName( "separatorBeforeSave" );
 
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     navToolbar->addAction( ui.saveArticleTB );
     navToolbar->widgetForAction( ui.saveArticleTB )->setObjectName( "saveArticleButton" );
   
     navToolbar->addAction( ui.printTB );
     navToolbar->widgetForAction( ui.printTB )->setObjectName( "printButton" );
-  #else
+#else
     navToolbar->addAction( ui.saveArticle );
     navToolbar->widgetForAction( ui.saveArticle )->setObjectName( "saveArticleButton" );
   
     navToolbar->addAction( ui.print );
     navToolbar->widgetForAction( ui.print )->setObjectName( "printButton" );
-  #endif
+#endif
 
   navToolbar->widgetForAction( navToolbar->addSeparator() )->setObjectName( "separatorBeforeAddToFavorites" );
 
@@ -408,21 +408,21 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
 
   ui.menuZoom->addSeparator();
 
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     wordsZoomIn = ui.menuZoom->addAction( QIcon( ":/macicons/zoomin.svg" ), tr( "Words Zoom In" ) );
-  #else
+#else
     wordsZoomIn = ui.menuZoom->addAction( QIcon( ":/icons/icon32_zoomin.png" ), tr( "Words Zoom In" ) );
-  #endif
+#endif
   wordsZoomIn->setShortcuts( QList< QKeySequence >() <<
                             QKeySequence( "Alt++" ) <<
                             QKeySequence( "Alt+=" ) );
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     wordsZoomOut = ui.menuZoom->addAction( QIcon( ":/macicons/zoomout.svg" ), tr( "Words Zoom Out" ) );
     wordsZoomBase = ui.menuZoom->addAction( QIcon( ":/macicons/zoombase.svg" ), tr( "Words Normal Size" ) );
-  #else
+#else
     wordsZoomOut = ui.menuZoom->addAction( QIcon( ":/icons/icon32_zoomout.png" ), tr( "Words Zoom Out" ) );
     wordsZoomBase = ui.menuZoom->addAction( QIcon( ":/icons/icon32_zoombase.png" ), tr( "Words Normal Size" ) );
-  #endif
+#endif
   wordsZoomOut->setShortcut( QKeySequence( "Alt+-" ) );
   wordsZoomBase->setShortcut( QKeySequence( "Alt+0" ) );
 
@@ -470,9 +470,9 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   closeCurrentTabAction.setShortcutContext( Qt::WidgetWithChildrenShortcut );
   closeCurrentTabAction.setShortcut( QKeySequence( "Ctrl+W" ) );
   closeCurrentTabAction.setText( tr("Close current tab") );
-  #ifndef Q_OS_MAC
+#ifndef Q_OS_MAC
     closeCurrentTabAction.setIcon( QIcon(":/icons/closetab.png") );
-  #endif
+#endif
 
   connect( &closeCurrentTabAction, SIGNAL( triggered() ),
            this, SLOT( closeCurrentTab() ) );
@@ -678,11 +678,11 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   addTab.setAutoRaise( true );
   addTab.setToolTip( tr( "New Tab"  ) );
   addTab.setFocusPolicy( Qt::NoFocus );
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     addTab.setIcon( QIcon( ":/macicons/addtab_xs.svg" ) );
-  #else
+#else
     addTab.setIcon( QIcon( ":/icons/addtab.png" ) );
-  #endif
+#endif
 
   ui.tabWidget->setHideSingleTab(cfg.preferences.hideSingleTab);
   ui.tabWidget->clear();
@@ -976,13 +976,13 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   if( layoutDirection() == Qt::RightToLeft )
   {
     // Adjust button icons for Right-To-Left layout
-    #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
       navBack->setIcon( QIcon( ":/macicons/next.svg" ) );
       navForward->setIcon( QIcon( ":/macicons/previous.svg" ) );
-    #else
+#else
       navBack->setIcon( QIcon( ":/icons/next.png" ) );
       navForward->setIcon( QIcon( ":/icons/previous.png" ) );
-    #endif
+#endif
   }
 }
 
@@ -1649,11 +1649,11 @@ vector< sptr< Dictionary::Class > > const & MainWindow::getActiveDicts()
 
 void MainWindow::createTabList()
 {
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     tabListMenu->setIcon(QIcon(":/macicons/windows-list.svg"));
-  #else
+#else
     tabListMenu->setIcon(QIcon(":/icons/windows-list.png"));
-  #endif
+#endif
   connect(tabListMenu, SIGNAL(aboutToShow()), this, SLOT(fillWindowsMenu()));
   connect(tabListMenu, SIGNAL(triggered(QAction*)), this, SLOT(switchToWindow(QAction*)));
 

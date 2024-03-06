@@ -595,11 +595,11 @@ QVariant FavoritesModel::data( QModelIndex const & index, int role ) const
   {
     if( item->type() == TreeItem::Folder || item->type() == TreeItem::Root )
     {
-      #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
         return QIcon( ":/macicons/folder.png" );
-      #else
+#else
         return QIcon( ":/icons/folder.png" );
-      #endif
+#endif
     }
 
     return QVariant();

@@ -80,27 +80,27 @@ HelpWindow::HelpWindow( QWidget * parent, Config::Class & cfg_ ) :
   navToolBar = new QToolBar( this );
   navHome = navToolBar->addAction( QIcon( ":/icons/home.png" ), tr( "Home" ) );
   navToolBar->widgetForAction( navHome )->setObjectName( "helpHomeButton" );
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     navBack = navToolBar->addAction( QIcon( ":/macicons/previous.svg" ), tr( "Back" ) );
     navForward = navToolBar->addAction( QIcon( ":/macicons/next.svg" ), tr( "Forward" ) );
-  #else
+#else
     navBack = navToolBar->addAction( QIcon( ":/icons/previous.png" ), tr( "Back" ) );
     navForward = navToolBar->addAction( QIcon( ":/icons/next.png" ), tr( "Forward" ) );
-  #endif
+#endif
   navToolBar->widgetForAction( navBack )->setObjectName( "helpBackButton" );
   navToolBar->widgetForAction( navForward )->setObjectName( "helpForwardButton" );
 
   navToolBar->addSeparator();
 
-  #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     zoomInAction = navToolBar->addAction( QIcon( ":/macicons/zoomin" ), tr( "Zoom In" ) );
     zoomOutAction = navToolBar->addAction( QIcon( ":/macicons/zoomout" ), tr( "Zoom Out" ) );
     zoomBaseAction = navToolBar->addAction( QIcon( ":/macicons/zoombase" ), tr( "Normal Size" ) );
-  #else
+#else
     zoomInAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoomin" ), tr( "Zoom In" ) );
     zoomOutAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoomout" ), tr( "Zoom Out" ) );
     zoomBaseAction = navToolBar->addAction( QIcon( ":/icons/icon32_zoombase" ), tr( "Normal Size" ) );
-  #endif
+#endif
   navToolBar->widgetForAction( zoomInAction )->setObjectName( "zoomInButton" );
   navToolBar->widgetForAction( zoomInAction )->setObjectName( "zoomOutButton" );
   navToolBar->widgetForAction( zoomBaseAction )->setObjectName( "zoomBaseButton" );
