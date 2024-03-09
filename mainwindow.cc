@@ -1964,7 +1964,9 @@ void MainWindow::titleChanged( ArticleView * view, QString const & title )
 
 void MainWindow::iconChanged( ArticleView * view, QIcon const & icon )
 {
+#ifndef Q_OS_MAC
   ui.tabWidget->setTabIcon( ui.tabWidget->indexOf( view ), groupInstances.size() > 1 ? icon : QIcon() );
+#endif
 }
 
 void MainWindow::updateWindowTitle()
