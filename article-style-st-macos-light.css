@@ -34,7 +34,7 @@ html::after
 }
 body
 {
-  font-family: "Noto Sans", "Helvetica Neue", Helvetica, "Arial Unicode MS", "Apple Symbol", Wingdings, "Wingdings 2", "Wingdings 3", "Apple Color Emoji", sans-serif;
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, "Arial Unicode MS", "Noto Sans Symbols", "Noto Sans Symbols 2", "Noto Sans Math", "Apple Symbol", Wingdings, "Wingdings 2", "Wingdings 3", "Apple Color Emoji", sans-serif;
   font-size: 10.8pt;
   margin: 10px;
   background: transparent;
