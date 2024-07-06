@@ -41,6 +41,11 @@ body
   margin: 10px;
   background: transparent;
 }
+/* remove white lines in scrollbar corner */
+::-webkit-scrollbar-corner
+{
+  background: transparent;
+}
 
 /* ====================================================== */
 /*                    ARTICLE GENERALS                    */
